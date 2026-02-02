@@ -1,90 +1,70 @@
-let LANG="tr", ACTIVE="INSTAGRAM";
-
 const TEXT={
-tr:{buy:"Satın Al",search:"Servis ara...",best:"En Çok Satan"},
-en:{buy:"Buy",search:"Search service...",best:"Best Seller"}
+tr:{hero:"Türkiye’de En Çok Kullanılan Sosyal Medya Servisleri",search:"Servis ara...",users:"Aktif Kullanıcı",docs:"SMM Panel Belgeleri & Güven",buy:"Satın Al"},
+en:{hero:"Most Used Social Media Services in Turkey",search:"Search service...",users:"Active Users",docs:"SMM Panel Documents & Trust",buy:"Buy"},
+ar:{hero:"خدمات وسائل التواصل الاجتماعي الأكثر استخدامًا",search:"ابحث عن خدمة...",users:"مستخدم نشط",docs:"وثائق لوحة SMM",buy:"شراء"},
+ru:{hero:"Самые используемые SMM сервисы",search:"Поиск услуги...",users:"Активные пользователи",docs:"Документы SMM панели",buy:"Купить"},
+de:{hero:"Meistgenutzte Social Media Dienste",search:"Dienst suchen...",users:"Aktive Nutzer",docs:"SMM Panel Dokumente",buy:"Kaufen"},
+fr:{hero:"Services de médias sociaux les plus utilisés",search:"Rechercher un service...",users:"Utilisateurs actifs",docs:"Documents du panneau SMM",buy:"Acheter"}
 };
 
-const DATA={
-INSTAGRAM:[
-["Instagram Takipçi","₺120 – ₺250",1],
-["Instagram Türk Takipçi","₺150 – ₺300"],
-["Instagram Beğeni","₺25 – ₺60",1],
-["Instagram Türk Beğeni","₺70 – ₺120"],
-["Instagram Reel Views","₺40 – ₺90"],
-["Instagram Story Views","₺35 – ₺80"],
-["Instagram Yorum","₺400 – ₺900"]
-],
-TIKTOK:[
-["TikTok Takipçi","₺100 – ₺220",1],
-["TikTok Türk Takipçi","₺180 – ₺350"],
-["TikTok Likes","₺80 – ₺180"],
-["TikTok Views","₺50 – ₺140"]
-],
-YOUTUBE:[
-["YouTube Abone","₺180 – ₺450",1],
-["YouTube Views","₺60 – ₺150"],
-["YouTube Watch Time","₺800 – ₺2,000"]
-],
-TELEGRAM:[
-["Telegram Kanal Üye","₺150 – ₺350",1],
-["Telegram Post Views","₺40 – ₺100"]
-],
-SPOTIFY:[
-["Spotify Plays","₺60 – ₺150"],
-["Spotify Monthly Listener","₺200 – ₺500",1]
-],
-OTHER:[
-["Web Trafik Hedefli","₺70 – ₺180"],
-["SEO Backlinks","₺300 – ₺800",1],
-["Android App Install","₺170 – ₺380"],
-["Google Ads Click","₺400 – ₺900"]
-]
-};
+let LANG="tr";
 
-const tabs=document.getElementById("tabs");
-Object.keys(DATA).forEach(k=>{
-tabs.innerHTML+=`<button class="tab ${k==ACTIVE?"active":""}" data-cat="${k}">${k}</button>`;
-});
+const services=[
+{name:"Instagram Takipçi",price:"₺120 – ₺250",img:"https://cdn-icons-png.flaticon.com/512/2111/2111463.png"},
+{name:"Instagram Beğeni",price:"₺25 – ₺60",img:"https://cdn-icons-png.flaticon.com/512/2111/2111463.png"},
+{name:"TikTok Takipçi",price:"₺100 – ₺220",img:"https://cdn-icons-png.flaticon.com/512/3046/3046121.png"},
+{name:"YouTube Abone",price:"₺180 – ₺450",img:"https://cdn-icons-png.flaticon.com/512/1384/1384060.png"},
+{name:"Telegram Kanal Üye",price:"₺150 – ₺350",img:"https://cdn-icons-png.flaticon.com/512/2111/2111646.png"},
+{name:"Twitter (X) Takipçi",price:"₺130 – ₺300",img:"https://cdn-icons-png.flaticon.com/512/5968/5968830.png"},
+{name:"Spotify Plays",price:"₺60 – ₺150",img:"https://cdn-icons-png.flaticon.com/512/2111/2111624.png"},
+{name:"Discord Üye",price:"₺150 – ₺350",img:"https://cdn-icons-png.flaticon.com/512/5968/5968756.png"},
+{name:"Twitch Takipçi",price:"₺220 – ₺500",img:"https://cdn-icons-png.flaticon.com/512/733/733577.png"},
+{name:"Kick Followers",price:"₺180 – ₺400",img:"https://seeklogo.com/images/K/kick-logo-889A0A9E36-seeklogo.com.png"}
+];
 
-const list=document.getElementById("catalogList");
+const list=document.getElementById("serviceList");
 const search=document.getElementById("searchInput");
 
 function render(){
 list.innerHTML="";
-(DATA[ACTIVE]||[])
-.filter(s=>s[0].toLowerCase().includes(search.value.toLowerCase()))
+services.filter(s=>s.name.toLowerCase().includes(search.value.toLowerCase()))
 .forEach(s=>{
 list.innerHTML+=`
-<div class="item">
-<div>${s[0]} ${s[2]?`<span class="badge">${TEXT[LANG].best}</span>`:""}</div>
-<div class="price">${s[1]}</div>
-<a class="buy" target="_blank"
-href="https://t.me/zordodestek?text=${encodeURIComponent(s[0])}">
-${TEXT[LANG].buy}
-</a>
+<div class="service">
+<img src="${s.img}">
+<h3>${s.name}</h3>
+<div class="price">${s.price}</div>
+<div class="buy" onclick="order('${s.name}')">${TEXT[LANG].buy}</div>
 </div>`;
 });
 }
-
 render();
-
-tabs.onclick=e=>{
-if(!e.target.dataset.cat)return;
-document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
-e.target.classList.add("active");
-ACTIVE=e.target.dataset.cat;
-render();
-};
 
 search.oninput=render;
+
+function order(service){
+document.getElementById("notifySound")?.play();
+window.open(
+"https://t.me/zordodestek?text="+encodeURIComponent("🛒 Yeni Sipariş\n📦 "+service),
+"_blank"
+);
+}
 
 document.querySelectorAll(".lang-btn").forEach(b=>{
 b.onclick=()=>{
 document.querySelectorAll(".lang-btn").forEach(x=>x.classList.remove("active"));
 b.classList.add("active");
 LANG=b.dataset.lang;
+document.getElementById("heroText").innerText=TEXT[LANG].hero;
+document.getElementById("userLabel").innerText=TEXT[LANG].users;
+document.getElementById("docsTitle").innerText=TEXT[LANG].docs;
 search.placeholder=TEXT[LANG].search;
 render();
 };
 });
+
+let users=1000000;
+setInterval(()=>{
+users+=Math.floor(Math.random()*5);
+document.getElementById("userCount").innerText=users.toLocaleString()+"+";
+},3000);
