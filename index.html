@@ -2,23 +2,24 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SMM Panel</title>
-<link rel="stylesheet" href="assets/css/style.css">
-<script defer src="assets/js/app.js"></script>
+
+<link rel="stylesheet" href="/assets/css/style.css">
+<script defer src="/assets/js/app.js"></script>
 </head>
 
 <body>
 
 <header>
   <div class="logo">⚡ SMM PANEL</div>
-
   <div class="burger" onclick="toggleMenu()">☰</div>
 
   <nav id="menu">
-    <a href="index.html">Ana Sayfa</a>
-    <a href="services.html">Servisler</a>
-    <a href="login.html">Giriş</a>
-    <a href="register.html">Kayıt Ol</a>
+    <a href="/">Ana Sayfa</a>
+    <a href="/services.html">Servisler</a>
+    <a href="/login.html">Giriş</a>
+    <a href="/register.html">Kayıt Ol</a>
   </nav>
 </header>
 
@@ -49,18 +50,17 @@
 <section class="ratings">
   <h2>⭐ Kullanıcı Puanları</h2>
   <div class="rating-box">
-    ★★★★★ 4.9 / 5
-    <span>1.248.392 değerlendirme</span>
+    ★★★★★ 4.9 / 5 <br>
+    <small>1.248.392 değerlendirme</small>
   </div>
 </section>
 
-<div class="reviews" id="reviews"></div>
-
-<div class="order-feed" id="orderFeed"></div>
+<div id="orderFeed" class="order-feed"></div>
+<div id="reviews" class="reviews"></div>
 
 <footer>
-  <p>✔ Belgeli • ✔ Güvenilir • ✔ Türkiye’nin En Çok Kullanılan Paneli</p>
-  <p><a href="policies.html">Politikalar & Belgeler</a></p>
+  ✔ Belgeli • ✔ Güvenilir • ✔ 1.000.000+ Kullanıcı <br>
+  <a href="/policies.html">Politikalar & Belgeler</a>
 </footer>
 
 </body>
