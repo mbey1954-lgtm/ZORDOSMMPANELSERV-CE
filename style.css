@@ -1,6 +1,8 @@
+*{box-sizing:border-box}
+
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial,Helvetica,sans-serif;
 background:#050a18;
 color:#fff;
 }
@@ -8,44 +10,62 @@ color:#fff;
 header{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:15px;
 background:#060d22;
 }
 
 .logo{
 color:#00f7ff;
+font-size:20px;
 font-weight:bold;
 }
 
 .burger{
+font-size:26px;
 cursor:pointer;
+color:#00f7ff;
 }
 
 nav{
 display:none;
 flex-direction:column;
+position:absolute;
+top:60px;
+right:10px;
+background:#060d22;
+padding:15px;
+border-radius:10px;
+box-shadow:0 0 20px #00f7ff66;
 }
 
 nav a{
 color:#00f7ff;
 text-decoration:none;
-margin:5px 0;
+margin:6px 0;
 }
 
 .hero{
 text-align:center;
-padding:80px 20px;
+padding:60px 15px;
 }
 
 .buy-btn{
 display:inline-block;
 margin-top:20px;
-padding:12px 25px;
+padding:12px 30px;
 background:#00f7ff;
 color:#000;
-border-radius:20px;
+border-radius:30px;
 text-decoration:none;
 font-weight:bold;
+box-shadow:0 0 25px #00f7ff;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .card{
@@ -53,6 +73,8 @@ background:#0b1224;
 padding:20px;
 margin:10px;
 border-radius:15px;
+min-width:200px;
+text-align:center;
 box-shadow:0 0 20px #00f7ff55;
 }
 
@@ -73,18 +95,28 @@ background:#0b1224;
 padding:10px;
 margin-top:8px;
 border-radius:10px;
+font-size:14px;
+box-shadow:0 0 15px #00f7ff55;
 }
 
 .review{
 background:#0b1224;
 padding:10px;
 margin:10px auto;
-width:300px;
+width:260px;
 border-radius:10px;
+text-align:center;
+}
+
+footer{
+text-align:center;
+padding:20px;
+font-size:13px;
+opacity:.8;
 }
 
 @keyframes pulse{
-0%{opacity:.5}
+0%{opacity:.4}
 50%{opacity:1}
-100%{opacity:.5}
+100%{opacity:.4}
 }
