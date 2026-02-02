@@ -1,0 +1,90 @@
+body{
+margin:0;
+font-family:Arial;
+background:#050a18;
+color:#fff;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+padding:15px;
+background:#060d22;
+}
+
+.logo{
+color:#00f7ff;
+font-weight:bold;
+}
+
+.burger{
+cursor:pointer;
+}
+
+nav{
+display:none;
+flex-direction:column;
+}
+
+nav a{
+color:#00f7ff;
+text-decoration:none;
+margin:5px 0;
+}
+
+.hero{
+text-align:center;
+padding:80px 20px;
+}
+
+.buy-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#00f7ff;
+color:#000;
+border-radius:20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.card{
+background:#0b1224;
+padding:20px;
+margin:10px;
+border-radius:15px;
+box-shadow:0 0 20px #00f7ff55;
+}
+
+.live-buy{
+margin-top:15px;
+color:#00f7ff;
+animation:pulse 2s infinite;
+}
+
+.order-feed{
+position:fixed;
+bottom:20px;
+left:20px;
+}
+
+.order-item{
+background:#0b1224;
+padding:10px;
+margin-top:8px;
+border-radius:10px;
+}
+
+.review{
+background:#0b1224;
+padding:10px;
+margin:10px auto;
+width:300px;
+border-radius:10px;
+}
+
+@keyframes pulse{
+0%{opacity:.5}
+50%{opacity:1}
+100%{opacity:.5}
+}
