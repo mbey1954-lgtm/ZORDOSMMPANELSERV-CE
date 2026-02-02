@@ -2,12 +2,8 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>Zordo SMM Panel | Global Social Media Services</title>
+<title>Zordo SMM Panel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="description" content="Instagram, TikTok, YouTube ve 50+ platform için profesyonel SMM panel vitrin hizmetleri.">
-<meta name="keywords" content="smm panel, instagram takipçi, tiktok beğeni, youtube abone">
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -17,15 +13,22 @@
 <header class="nav">
   <div class="logo">Zordo<span>SMM</span></div>
 
-  <div class="lang">
-    <button class="lang-btn active" data-lang="tr">TR</button>
-    <button class="lang-btn" data-lang="en">EN</button>
-    <button class="lang-btn" data-lang="ar">AR</button>
-    <button class="lang-btn" data-lang="ru">RU</button>
-    <button class="lang-btn" data-lang="de">DE</button>
-    <button class="lang-btn" data-lang="fr">FR</button>
+  <div class="nav-right">
+    <button class="login-btn" onclick="openAuth()">Giriş / Kayıt</button>
+    <div class="burger" onclick="toggleMenu()">☰</div>
   </div>
 </header>
+
+<nav id="menu" class="menu">
+  <a href="index.html">Ana Sayfa</a>
+  <a href="instagram.html">Instagram</a>
+  <a href="tiktok.html">TikTok</a>
+  <a href="youtube.html">YouTube</a>
+  <a href="telegram.html">Telegram</a>
+  <a href="twitter.html">Twitter (X)</a>
+  <a href="spotify.html">Spotify</a>
+  <a href="others.html">Diğer Platformlar</a>
+</nav>
 
 <section class="hero">
   <h1>Global <span>SMM Panel</span></h1>
@@ -34,41 +37,50 @@
   <div class="stats">
     <div>
       <h2 id="userCount">1,000,000+</h2>
-      <span id="userLabel">Aktif Kullanıcı</span>
-    </div>
-    <div>
-      <h2>99.9%</h2>
-      <span>Uptime</span>
+      <span>Aktif Kullanıcı</span>
     </div>
     <div>
       <h2>50+</h2>
       <span>Platform</span>
     </div>
+    <div>
+      <h2>99.9%</h2>
+      <span>Uptime</span>
+    </div>
   </div>
 </section>
 
-<section class="catalog">
-  <input id="searchInput" placeholder="Servis ara...">
-  <div id="serviceList" class="service-list"></div>
-</section>
-
 <section class="trust">
-  <h2 id="docsTitle">SMM Panel Belgeleri & Güven</h2>
+  <h2>SMM Panel Belgeleri</h2>
   <div class="trust-grid">
     <div>✔ 5651 Sayılı Kanun Uyumlu</div>
-    <div>✔ KVKK (Türkiye) Uyumlu</div>
-    <div>✔ SSL Güvenli Altyapı</div>
-    <div>✔ Global SMM API Standartları</div>
-    <div>✔ Doğrulanmış Hizmet Sağlayıcı</div>
-    <div>✔ Türkiye Odaklı Platformlar</div>
+    <div>✔ KVKK Uyumlu</div>
+    <div>✔ SSL Güvenli</div>
+    <div>✔ Global SMM API</div>
+    <div>✔ Türkiye Odaklı</div>
+    <div>✔ Doğrulanmış Hizmet</div>
   </div>
 </section>
 
 <footer>
-  © 2026 Zordo SMM Panel • Telegram: <b>@zordodestek</b>
+Telegram: <b>@zordodestek</b>
 </footer>
 
-<audio id="notifySound" src="notify.mp3" preload="auto"></audio>
+<!-- AUTH MODAL -->
+<div id="authModal" class="modal">
+  <div class="modal-box">
+    <h3>Giriş / Kayıt</h3>
+    <input id="email" placeholder="E-posta">
+    <input id="pass" type="password" placeholder="Şifre">
+    <button onclick="register()">Kayıt Ol</button>
+    <button onclick="login()">Giriş Yap</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast">Kayıt oldun ✅</div>
+
+<audio id="notifySound" src="notify.mp3"></audio>
 
 <script src="app.js"></script>
 </body>
