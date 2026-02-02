@@ -1,104 +1,92 @@
-*{box-sizing:border-box}
 body{
 margin:0;
-font-family:Inter;
-background:#05060a;
+font-family:Arial;
+background:#080b14;
 color:#fff;
 }
 
-.nav{
+.logo span{color:#00f7ff}
+header{
 display:flex;
 justify-content:space-between;
-padding:16px 24px;
-background:#070912;
-position:sticky;top:0;
+padding:15px 20px;
+background:#0f172a;
 }
-
-.logo{font-weight:900;font-size:26px}
-.logo span{color:#00f0ff}
 
 .burger{font-size:26px;cursor:pointer}
 
-.menu{
-position:fixed;
-right:-260px;top:0;
-width:260px;height:100%;
-background:#0b0e1a;
-padding:30px;
-transition:.4s;
-display:flex;
+nav{
+display:none;
 flex-direction:column;
-gap:14px;
+background:#0b1224;
 }
-.menu.active{right:0}
-.menu a{
-color:#fff;text-decoration:none;
-padding:12px;border:1px solid #333;border-radius:12px;
+nav.active{display:flex}
+nav a{
+color:#fff;
+padding:10px;
+text-decoration:none;
 }
 
-.hero{text-align:center;padding:80px 20px}
-.hero h1{font-size:56px}
-.hero span{color:#00f0ff}
+.hero{
+text-align:center;
+padding:60px;
+}
 
-.stats{display:flex;justify-content:center;gap:40px}
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+padding:20px;
+}
 
-.catalog{max-width:1200px;margin:auto;padding:40px}
-.service-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
-
-.service{
-background:#0b0e1a;
+.card{
+background:#0b1224;
 padding:20px;
 border-radius:20px;
-border:1px solid #333;
-transition:.3s;
-}
-.service:hover{transform:scale(1.04);box-shadow:0 0 25px #00f0ff}
-.service img{width:45px}
-
-.price{color:#00f0ff;font-weight:800}
-.buy{
-margin-top:10px;
-padding:10px;
-border-radius:12px;
-background:#00f0ff;
-color:#000;
-font-weight:900;
 text-align:center;
+box-shadow:0 0 20px #00f7ff33;
+}
+
+.hot::after{
+content:"🔥 EN ÇOK SATAN";
+display:block;
+color:#ff00ff;
+font-size:12px;
+margin-top:5px;
+}
+
+button{
+margin-top:15px;
+padding:10px 25px;
+border:none;
+border-radius:25px;
+background:#00f7ff;
 cursor:pointer;
 }
 
-.trust{max-width:1000px;margin:60px auto;padding:40px;background:#0b0e1a;border-radius:20px}
-.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;color:#9aa0ff}
-
-footer{text-align:center;padding:30px;color:#777}
-
-/* MODAL */
-.modal{
-display:none;
-position:fixed;inset:0;
-background:rgba(0,0,0,.7);
-align-items:center;justify-content:center;
-}
-.modal-box{
-background:#0b0e1a;
+.auth-box{
+width:300px;
+margin:80px auto;
+background:#0b1224;
 padding:30px;
 border-radius:20px;
-width:300px;
-}
-.modal-box input,button{
-width:100%;
-margin-top:10px;
-padding:10px;border-radius:10px;border:none;
+text-align:center;
 }
 
-/* TOAST */
+.auth-box input{
+width:100%;
+margin:10px 0;
+padding:10px;
+border-radius:10px;
+border:none;
+}
+
 .toast{
 position:fixed;
-bottom:30px;right:30px;
-background:#00f0ff;
+bottom:30px;
+right:30px;
+background:#00f7ff;
 color:#000;
-padding:14px 20px;
-border-radius:12px;
-display:none;
-font-weight:900;
+padding:15px 25px;
+border-radius:15px;
 }
