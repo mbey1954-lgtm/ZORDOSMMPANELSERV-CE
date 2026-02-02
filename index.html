@@ -2,69 +2,65 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>Zordo SMM Panel</title>
-
+<title>SMM Panel</title>
 <link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet"
- href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<script src="assets/js/app.js" defer></script>
+<script defer src="assets/js/app.js"></script>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">Zordo<span>SMM</span></div>
-  <div class="burger" onclick="toggleMenu()">☰</div>
-</header>
+  <div class="logo">⚡ SMM PANEL</div>
 
-<nav id="menu">
-  <a href="index.html">Ana Sayfa</a>
-  <a href="services/instagram.html">Servisler</a>
-  <a href="login.html">Giriş Yap</a>
-  <a href="register.html">Kayıt Ol</a>
-</nav>
+  <div class="burger" onclick="toggleMenu()">☰</div>
+
+  <nav id="menu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="services.html">Servisler</a>
+    <a href="login.html">Giriş</a>
+    <a href="register.html">Kayıt Ol</a>
+  </nav>
+</header>
 
 <section class="hero">
   <h1>Türkiye’nin En Güçlü SMM Paneli</h1>
-  <p>👥 1.000.000+ Aktif Kullanıcı</p>
+  <p>Instagram • TikTok • YouTube • Telegram • Daha Fazlası</p>
+
+  <div class="live-buy">
+    🔥 Şu an <span id="liveCount">1000</span> kişi satın alıyor
+  </div>
+
+  <a class="buy-btn" href="https://t.me/zordodestek" target="_blank">
+    Satın Al
+  </a>
 </section>
 
-<section class="services">
+<section class="best">
+  <h2>🔥 En Çok Satan Servisler</h2>
 
-<div class="card hot">
-<i class="fab fa-instagram"></i>
-<h3>Instagram</h3>
-<button onclick="goService('instagram')">Servise Git</button>
-</div>
-
-<div class="card">
-<i class="fab fa-tiktok"></i>
-<h3>TikTok</h3>
-<button onclick="goService('tiktok')">Servise Git</button>
-</div>
-
-<div class="card">
-<i class="fab fa-youtube"></i>
-<h3>YouTube</h3>
-<button onclick="goService('youtube')">Servise Git</button>
-</div>
-
-<div class="card">
-<i class="fab fa-telegram"></i>
-<h3>Telegram</h3>
-<button onclick="goService('telegram')">Servise Git</button>
-</div>
-
+  <div class="cards">
+    <div class="card">📸 Instagram Takipçi</div>
+    <div class="card">🎵 TikTok İzlenme</div>
+    <div class="card">▶️ YouTube Abone</div>
+    <div class="card">✈️ Telegram Üye</div>
+  </div>
 </section>
 
-<section class="trust">
-<h2>🔒 Güvenli & Belgeli</h2>
-<p>SSL • %99 Uptime • Doğrulanmış Servisler</p>
+<section class="ratings">
+  <h2>⭐ Kullanıcı Puanları</h2>
+  <div class="rating-box">
+    ★★★★★ 4.9 / 5
+    <span>1.248.392 değerlendirme</span>
+  </div>
 </section>
+
+<div class="reviews" id="reviews"></div>
+
+<div class="order-feed" id="orderFeed"></div>
 
 <footer>
-© 2026 Zordo SMM Panel
+  <p>✔ Belgeli • ✔ Güvenilir • ✔ Türkiye’nin En Çok Kullanılan Paneli</p>
+  <p><a href="policies.html">Politikalar & Belgeler</a></p>
 </footer>
 
 </body>
