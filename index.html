@@ -3,85 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <title>Zordo SMM Panel</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script src="assets/js/app.js" defer></script>
 </head>
 
 <body>
 
-<header class="nav">
+<header>
   <div class="logo">Zordo<span>SMM</span></div>
-
-  <div class="nav-right">
-    <button class="login-btn" onclick="openAuth()">Giriş / Kayıt</button>
-    <div class="burger" onclick="toggleMenu()">☰</div>
-  </div>
+  <div class="burger" onclick="toggleMenu()">☰</div>
 </header>
 
-<nav id="menu" class="menu">
+<nav id="menu">
   <a href="index.html">Ana Sayfa</a>
-  <a href="instagram.html">Instagram</a>
-  <a href="tiktok.html">TikTok</a>
-  <a href="youtube.html">YouTube</a>
-  <a href="telegram.html">Telegram</a>
-  <a href="twitter.html">Twitter (X)</a>
-  <a href="spotify.html">Spotify</a>
-  <a href="others.html">Diğer Platformlar</a>
+  <a href="services/instagram.html">Servisler</a>
+  <a href="login.html">Giriş Yap</a>
+  <a href="register.html">Kayıt Ol</a>
 </nav>
 
 <section class="hero">
-  <h1>Global <span>SMM Panel</span></h1>
-  <p id="heroText">Türkiye’de En Çok Kullanılan Sosyal Medya Servisleri</p>
+  <h1>Türkiye’nin En Güçlü SMM Paneli</h1>
+  <p>👥 1.000.000+ Aktif Kullanıcı</p>
+</section>
 
-  <div class="stats">
-    <div>
-      <h2 id="userCount">1,000,000+</h2>
-      <span>Aktif Kullanıcı</span>
-    </div>
-    <div>
-      <h2>50+</h2>
-      <span>Platform</span>
-    </div>
-    <div>
-      <h2>99.9%</h2>
-      <span>Uptime</span>
-    </div>
-  </div>
+<section class="services">
+
+<div class="card hot">
+<i class="fab fa-instagram"></i>
+<h3>Instagram</h3>
+<button onclick="goService('instagram')">Servise Git</button>
+</div>
+
+<div class="card">
+<i class="fab fa-tiktok"></i>
+<h3>TikTok</h3>
+<button onclick="goService('tiktok')">Servise Git</button>
+</div>
+
+<div class="card">
+<i class="fab fa-youtube"></i>
+<h3>YouTube</h3>
+<button onclick="goService('youtube')">Servise Git</button>
+</div>
+
+<div class="card">
+<i class="fab fa-telegram"></i>
+<h3>Telegram</h3>
+<button onclick="goService('telegram')">Servise Git</button>
+</div>
+
 </section>
 
 <section class="trust">
-  <h2>SMM Panel Belgeleri</h2>
-  <div class="trust-grid">
-    <div>✔ 5651 Sayılı Kanun Uyumlu</div>
-    <div>✔ KVKK Uyumlu</div>
-    <div>✔ SSL Güvenli</div>
-    <div>✔ Global SMM API</div>
-    <div>✔ Türkiye Odaklı</div>
-    <div>✔ Doğrulanmış Hizmet</div>
-  </div>
+<h2>🔒 Güvenli & Belgeli</h2>
+<p>SSL • %99 Uptime • Doğrulanmış Servisler</p>
 </section>
 
 <footer>
-Telegram: <b>@zordodestek</b>
+© 2026 Zordo SMM Panel
 </footer>
 
-<!-- AUTH MODAL -->
-<div id="authModal" class="modal">
-  <div class="modal-box">
-    <h3>Giriş / Kayıt</h3>
-    <input id="email" placeholder="E-posta">
-    <input id="pass" type="password" placeholder="Şifre">
-    <button onclick="register()">Kayıt Ol</button>
-    <button onclick="login()">Giriş Yap</button>
-  </div>
-</div>
-
-<!-- TOAST -->
-<div id="toast" class="toast">Kayıt oldun ✅</div>
-
-<audio id="notifySound" src="notify.mp3"></audio>
-
-<script src="app.js"></script>
 </body>
 </html>
