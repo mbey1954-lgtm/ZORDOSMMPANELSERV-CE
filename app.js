@@ -2,47 +2,31 @@ function toggleMenu(){
 document.getElementById("menu").classList.toggle("active");
 }
 
-function order(service){
-document.getElementById("notifySound")?.play();
-window.open(
-"https://t.me/zordodestek?text="+encodeURIComponent(
-"🛒 Yeni Sipariş\n📦 "+service
-),
-"_blank"
-);
+function buy(){
+try{
+ new Audio("assets/sounds/click.mp3").play();
+}catch(e){}
+window.location.href="https://t.me/zordodestek";
 }
 
-/* AUTH */
-function openAuth(){
-document.getElementById("authModal").style.display="flex";
+function goService(name){
+window.location.href="services/"+name+".html";
 }
 
 function register(){
-localStorage.setItem("user","ok");
-showToast("Kayıt oldun ✅");
-closeAuth();
+showToast("✅ Kayıt oldun!");
+setTimeout(()=>location.href="index.html",1500);
 }
 
 function login(){
-showToast("Giriş yapıldı ✅");
-closeAuth();
+showToast("👋 Hoş geldin!");
+setTimeout(()=>location.href="index.html",1500);
 }
 
-function closeAuth(){
-document.getElementById("authModal").style.display="none";
+function showToast(msg){
+const t=document.createElement("div");
+t.className="toast";
+t.innerText=msg;
+document.body.appendChild(t);
+setTimeout(()=>t.remove(),5000);
 }
-
-function showToast(text){
-const t=document.getElementById("toast");
-t.innerText=text;
-t.style.display="block";
-setTimeout(()=>t.style.display="none",5000);
-}
-
-/* FAKE USER COUNT */
-let u=1000000;
-setInterval(()=>{
-u+=Math.floor(Math.random()*5);
-const el=document.getElementById("userCount");
-if(el) el.innerText=u.toLocaleString()+"+";
-},3000);
